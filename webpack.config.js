@@ -77,10 +77,10 @@ const config = {
 	 * @link https://webpack.github.io/docs/configuration.html#output
 	 */
 	output: {
-		path: helpers.root( 'dist' ),
-		// path: path.join( __dirname, 'dist' ),
-		// publicPath: path.join( __dirname, 'dist/' ),
-		publicPath: 'http://angular.sdev.com:9090/dist/',
+		//path: helpers.root( 'dist' ),
+		path: path.join( __dirname, 'dist' ),
+		publicPath: path.join( __dirname, 'dist/' ),
+		//publicPath: 'http://angular.sdev.com:9090/dist/',
 		// publicPath: '/',
 		filename: '[name].bundle.js',
 		sourceMapFilename: '[name].map',

@@ -11,6 +11,8 @@ export class ApiService {
 		Accept: 'application/json'
 	} );
 
+	options: RequestOptions = new RequestOptions({ headers: this.headers });
+
 	api_url: string = 'http://localhost:3500';
 
 	constructor( private http: Http ) {};
@@ -35,7 +37,7 @@ export class ApiService {
 	};
 
 	get( path: string ) : Observable<any> {
-		return this.http.get( `${ this.api_url }${ path }`, this.headers )
+		return this.http.get( `${ this.api_url }${ path }`, this.options )
 		.map( this.checkForError )
 		.catch( err => Observable.throw( err ) )
 		.map( this.getJson );
